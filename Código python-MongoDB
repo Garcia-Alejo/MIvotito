@@ -1,0 +1,213 @@
+#código hecho con amor, faltan cosas y eso es evidente, pero intenté hacerlo yo mismo
+#sin copiar y pegar de ningún lado, espero se aprecie <3
+
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+from bson.objectid import ObjectId
+import pymongo
+
+MONGO_HOST = "localhost"
+MONGO_PUERTO = "27017"
+MONGO_TIMEOUT = 1000
+
+MONGO_URL = "mongodb://"+MONGO_HOST+":"+MONGO_PUERTO+"/"
+
+MONGO_DATABASE = "MiVotito"
+MONGO_COLECCION = "votantes"
+MONGO_COLECCION_CANDIDATOS = "candidatos"
+increment_value= 1
+
+ID_votante = ""
+cliente=pymongo.MongoClient(MONGO_URL,serverSelectionTimeoutMS=MONGO_TIMEOUT)
+DataBase=cliente[MONGO_DATABASE]
+coleccion=DataBase[MONGO_COLECCION]
+DataBase_candidatos=cliente[MONGO_DATABASE]
+coleccion_candidatos=DataBase_candidatos[MONGO_COLECCION_CANDIDATOS]
+
+def mostrarDatos(nombre="",dni="",voto=""):
+    objetoBuscar={}
+    if len(nombre) !=0:
+        objetoBuscar["nombre"]=nombre
+    if len(dni) !=0:
+        objetoBuscar["dni"]=dni
+    if len(voto) !=0:
+        objetoBuscar["voto"]=voto
+    try:
+        registros=tabla.get_children()
+        for registro in registros:
+            tabla.delete(registro)  
+        for documento in coleccion.find(objetoBuscar):
+            tabla.insert('',0,text=documento["_id"], values=documento["nombre"])
+    except pymongo.errors.ServerSelectionTimeoutError as errorTiempo:
+        print("tiempo excedido " + str(errorTiempo))
+    except pymongo.errors.ConnectionFailure as errorConexion:
+        print("fallo al conectar " + str(errorConexion))
+
+def crearRegistro():
+    if len(nombre.get()) !=0 and len(dni.get()) !=0 and len(voto.get()):
+        try:
+            documento={"nombre":nombre.get(),"dni":dni.get(),"voto":voto.get()}
+            coleccion.insert_one(documento)
+            nombre.delete(0,END)
+            dni.delete(0,END)
+            voto.delete(0,END)
+        except pymongo.errors.ConnectionFailure as error:
+            print(error)
+    else:
+        messagebox.showerror(message="los campos no pueden estar vacíos")
+    if voto.get()=="milei":
+        criteria = {"apellido": "milei"}
+        update_query = {"$inc": {"votos": increment_value}} #incrementa el voto por 1 cada vez que se vota a ese candidato
+        coleccion_candidatos.update_one(criteria, update_query)
+    if voto.get()=="bullrich":
+        criteria = {"apellido": "bullrich"}
+        update_query = {"$inc": {"votos": increment_value}} #incrementa el voto por 1 cada vez que se vota a ese candidato
+        coleccion_candidatos.update_one(criteria, update_query)
+    if voto.get()=="larreta":
+        criteria = {"apellido": "larreta"}
+        update_query = {"$inc": {"votos": increment_value}} #incrementa el voto por 1 cada vez que se vota a ese candidato
+        coleccion_candidatos.update_one(criteria, update_query)
+    if voto.get()=="massa":
+        criteria = {"apellido": "massa"}
+        update_query = {"$inc": {"votos": increment_value}} #incrementa el voto por 1 cada vez que se vota a ese candidato
+        coleccion_candidatos.update_one(criteria, update_query)
+    mostrarDatos()
+
+def editarRegistro():
+    global ID_votante
+    if len(nombre.get()) !=0 and len(dni.get()) !=0 and len(voto.get()):
+        try:
+            idBuscar={"_id":ObjectId(ID_votante)}
+            nuevosValores={"$set":{"nombre":nombre.get(),"dni":dni.get(),"voto":voto.get()}}
+            coleccion.update_many(idBuscar,nuevosValores)
+            nombre.delete(0,END)
+            dni.delete(0,END)
+            voto.delete(0,END)
+        except pymongo.errors.ConnectionFailure as error:
+            print(error)    
+    else:
+        messagebox.showerror("los campos no pueden estar vacíos")
+    mostrarDatos()
+    crear["state"]="normal"
+    editar["state"]="disabled"
+    borrar["state"]="disabled"
+
+def borrarRegistro():
+
+    global ID_votante
+    try:
+        idBuscar={"_id":ObjectId(ID_votante)}
+        coleccion.delete_one(idBuscar)
+        nombre.delete(0,END)
+        dni.delete(0,END)
+        voto.delete(0,END)
+    except pymongo.errors.ConnectionFailure as error:
+        print(error)
+    crear["state"]="normal"
+    editar["state"]="disabled"
+    borrar["state"]="disabled"
+    mostrarDatos()
+
+def buscarRegistro():
+    mostrarDatos(buscarNombre.get(),buscarDni.get(),buscarVoto.get())
+
+def dobleClick(event):
+    global ID_votante
+    ID_votante=str(tabla.item(tabla.selection())["text"])
+    documento=coleccion.find({"_id":ObjectId(ID_votante)})[0]
+    nombre.delete(0,END)
+    nombre.insert(0,documento["nombre"])
+    dni.delete(0,END)
+    dni.insert(0,documento["dni"])
+    voto.delete(0,END)
+    voto.insert(0,documento["voto"])
+    crear["state"]="disabled"
+    editar["state"]="normal"
+    borrar["state"]="normal"
+
+ventanaFinal=Tk()
+final=ttk.Treeview(ventanaFinal, columns=2)
+final.grid(row=2,column=0,columnspan=2)
+final.heading("#0", text="candidato")
+final.heading("#1", text="votos")
+registrosFinales = final.get_children()
+
+try:
+    registros = final.get_children()
+    for registro in registros:
+        final.delete(registro)  
+
+    for documento in coleccion.find():
+        apellido = documento.get("apellido")
+        final.insert('', 0, text=apellido, values=documento["votos"])
+        print(apellido, flush=True)  # Add this line to print apellido
+        
+except pymongo.errors.ServerSelectionTimeoutError as errorTiempo:
+    print("tiempo excedido " + str(errorTiempo))
+except pymongo.errors.ConnectionFailure as errorConexion:
+    print("fallo al conectar " + str(errorConexion))
+
+
+ventana=Tk()
+tabla=ttk.Treeview(ventana, columns=2)
+tabla.grid(row=1,column=0,columnspan=2)
+tabla.heading("#0", text="ID")
+tabla.heading("#1", text="nombre")
+tabla.bind("<Double-Button-1>", dobleClick)
+
+
+#nombre
+Label(ventana,text="Nombre").grid(row=2,column=0,sticky=W+E)
+nombre=Entry(ventana)
+nombre.grid(row=2,column=1,sticky=W+E)
+nombre.focus()
+
+#dni
+Label(ventana,text="dni").grid(row=3,column=0,sticky=W+E)
+dni=Entry(ventana)
+dni.grid(row=3,column=1,sticky=W+E)
+
+#voto
+Label(ventana,text="voto").grid(row=4,column=0,sticky=W+E)
+voto=Entry(ventana)
+voto.grid(row=4,column=1,sticky=W+E)
+
+#botón agregar
+crear=Button(ventana,text="añadir voto",command=crearRegistro,bg="green", fg="white")
+crear.grid(row=5, columnspan=2,sticky=W+E)
+
+#botón editar
+editar=Button(ventana,text="editar voto", command=editarRegistro,bg="yellow")
+editar.grid(row=6, columnspan=2,sticky=W+E)
+editar["state"]="disabled"
+
+#botón borrar
+borrar=Button(ventana,text="borrar voto", command=borrarRegistro,bg="red")
+borrar.grid(row=7, columnspan=2,sticky=W+E)
+borrar["state"]="disabled"
+
+#Buscar nombre
+Label(ventana,text="Buscar por nombre").grid(row=8,column=0,sticky=W+E)
+buscarNombre=Entry(ventana)
+buscarNombre.grid(row=8,column=1,sticky=W+E)
+buscarNombre.focus()
+
+#Buscar dni
+Label(ventana,text="Buscar por dni").grid(row=9,column=0,sticky=W+E)
+buscarDni=Entry(ventana)
+buscarDni.grid(row=9,column=1,sticky=W+E)
+
+#Buscar voto
+Label(ventana,text="Buscar por voto").grid(row=10,column=0,sticky=W+E)
+buscarVoto=Entry(ventana)
+buscarVoto.grid(row=10,column=1,sticky=W+E)
+
+#botón buscar
+buscar=Button(ventana,text="buscar voto", command=buscarRegistro,bg="blue")
+buscar.grid(row=11, columnspan=2,sticky=W+E)
+buscar["state"]="normal"
+
+mostrarDatos()
+
+ventana.mainloop()
