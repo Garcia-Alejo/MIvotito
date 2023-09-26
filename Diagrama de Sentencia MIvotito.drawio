@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" modified="2023-09-19T02:06:11.158Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="n1eEAL9Alu0oOs9_3bdY" version="21.7.5" type="google">
+  <diagram name="Página-1" id="ccBvID4Svpnnq3VZn_Xo">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-1" target="Y6mUZeKCGeaeBCbmBt4m-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-1" value="1&lt;br&gt;Entrevista con el Cliente" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="-10" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-3" target="Y6mUZeKCGeaeBCbmBt4m-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-3" value="6&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;El analista y el diseñador llegan a un acuerdo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-7" value="16&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Se instruye al personal del cliente sobre el uso del sistema&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="232.5" width="120" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-8" target="Y6mUZeKCGeaeBCbmBt4m-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-8" value="15&lt;br&gt;Se entrega el sistema al cliente" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="247.5" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-9" target="Y6mUZeKCGeaeBCbmBt4m-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-9" value="12&lt;br&gt;se termina el código" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-10" target="Y6mUZeKCGeaeBCbmBt4m-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-10" value="13&lt;br&gt;Se hace un testeo masivo del código para depurarlo de errores" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-11" target="Y6mUZeKCGeaeBCbmBt4m-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-11" value="14&lt;br&gt;Se corrigen posibles errores o se realizan mejoras que visualizamos en el testeo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="227.5" width="120" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-12" target="Y6mUZeKCGeaeBCbmBt4m-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-12" value="9&lt;br&gt;Se comienza el código del diseño&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-13" target="Y6mUZeKCGeaeBCbmBt4m-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-13" target="Y6mUZeKCGeaeBCbmBt4m-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-13" value="8&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Se pasa el diseño a los programadores" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="115" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-14" target="Y6mUZeKCGeaeBCbmBt4m-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-14" value="7&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Realizan el diseño de la solución acordada" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="115" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-15" target="Y6mUZeKCGeaeBCbmBt4m-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-15" value="2&lt;br&gt;Diagnostico entrevista" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="-10" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-16" target="Y6mUZeKCGeaeBCbmBt4m-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-16" value="3&lt;br&gt;Diseño plan proyecto" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="-7.5" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-17" target="Y6mUZeKCGeaeBCbmBt4m-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-17" value="4&lt;br&gt;Diseño del analista de sistema" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="-10" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-18" target="Y6mUZeKCGeaeBCbmBt4m-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-18" value="5&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;El analista y el diseñador trabajan busacando posibles soluciones al pedido" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="-25" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-33" value="10&lt;br&gt;Comienza el desarrollo de la base de datos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y6mUZeKCGeaeBCbmBt4m-36" target="Y6mUZeKCGeaeBCbmBt4m-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y6mUZeKCGeaeBCbmBt4m-36" value="11&lt;br&gt;Enlaza la base de datos con el codigo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
